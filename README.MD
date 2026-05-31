@@ -1,14 +1,14 @@
-# 高质量或付费 AI 教程写作 SOP 使用说明
+# paid-ai-writing-sop 使用说明
 
-> 适用对象：人类用户  
+> 适用对象：想把 AI 教程写作流程稳定下来的人  
 > 适用任务：付费 AI 教程改写、从 0 撰写教程、工具推荐文档、方法论文章、工作流类长文  
-> 当前目录用途：把“付费级 AI 教程写作”这件事，做成一套可复用、可复制、可扩展的标准流程
+> 当前目录用途：我把“付费级 AI 教程写作”这件事整理成一套可复用、可安装、可扩展的 Skill 工作流
 
 ---
 
 ## 先看安装
 
-当前这个仓库已经按“一个 Skills 仓库”组织好了，你可以直接把其中的 `Skills/paid-ai-writing-sop/` 安装到主流 Agent 的原生技能目录里使用。
+这个仓库现在已经按“一个 Skills 仓库”整理好了，可以直接把其中的 `Skills/paid-ai-writing-sop/` 安装到主流 Agent 的原生技能目录里使用。
 
 当前 skill 源目录：
 
@@ -43,7 +43,7 @@ pwsh ./install.ps1 -Target all -Scope user
 - Claude Code：输入 `/paid-ai-writing-sop`
 - Cursor：尝试 `/paid-ai-writing-sop` 或在相关任务里观察是否自动命中
 
-如果你只想安装到单一 Agent，再看下面的分平台命令。
+如果你只想装到单一 Agent，直接看下面的分平台命令。
 
 ### 二、标准安装前提
 
@@ -59,7 +59,7 @@ git clone <your-repo-url>
 cd Agent
 ```
 
-如果你的仓库名以后不是 `Agent`，那第二行就改成实际目录名。
+如果你的仓库名不是 `Agent`，第二行改成实际目录名即可。
 
 后面的所有安装命令，都默认是在这个仓库根目录里执行。
 
@@ -77,7 +77,7 @@ pwsh ./install.ps1 -Target all -Scope user
 bash ./install.sh --target all --scope user
 ```
 
-这会把当前 skill 一次性安装到：
+这会把当前 skill 一次性安装到下面几个位置：
 
 - Codex：`~/.agents/skills/paid-ai-writing-sop/`
 - Claude Code：`~/.claude/skills/paid-ai-writing-sop/`
@@ -186,7 +186,7 @@ bash ./install.sh --target cursor --scope project
 
 ### 五、安装到其它兼容 Agent 的方法
 
-如果某个 Agent 兼容 Agent Skills 标准，但没有内置这两个安装脚本，就手动复制下面这个目录：
+如果某个 Agent 兼容 Agent Skills 标准，但没有内置这两个安装脚本，直接手动复制下面这个目录即可：
 
 ```text
 Skills/paid-ai-writing-sop/
@@ -210,7 +210,7 @@ Skills/paid-ai-writing-sop/
 
 ### 六、如果当前 Agent 不支持原生 Skills
 
-那就不要走安装脚本，直接这样用：
+这种情况就不要走安装脚本，直接这样用：
 
 1. 先让 Agent 读取根目录 `AGENTS.md`
 2. 再读取 `Skills/paid-ai-writing-sop/SKILL.md`
@@ -251,7 +251,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ## 仓库结构
 
-这个仓库现在按“一个 Skills 仓库”组织：
+这个仓库现在按“一个 Skills 仓库”的方式组织：
 
 - `Skills/`：放所有技能目录
 - `Skills/paid-ai-writing-sop/`：当前这一个 skill 的主目录
@@ -259,19 +259,19 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 - `install.ps1` / `install.sh`：把 `Skills/<skill-name>/` 复制安装到不同 Agent 的原生技能目录
 - `AGENTS.md`：不支持原生 Skills 的 Agent 兜底入口
 
-如果以后这个仓库再增加别的 skills，也继续统一放在 `Skills/` 下即可。
+后续如果我再往这个仓库里加别的 skills，也会继续统一放在 `Skills/` 下。
 
 ---
 
 ## 一、这套 SOP 是干什么的，它的价值在哪里
 
-这套文档不是单纯的“写作提示词合集”，也不是普通的“让 AI 写得更像人”的说明书。
+这套内容不是简单的“写作提示词合集”，也不是那种只追求“让 AI 写得更像人”的说明书。
 
-它真正解决的是一个更实际的问题：
+我做这套 SOP，主要是为了解决一个更实际的问题：
 
 **怎么让 Agent 稳定地写出付费级别的 AI 教程，而不是只写出一篇看起来顺、但实际上没信息增量的普通文章。**
 
-这套 SOP 现在已经覆盖了两种核心工作模式：
+这套 SOP 现在覆盖两种核心工作模式：
 
 1. `改写已有原稿`
 2. `从 0 撰写新稿`
@@ -284,7 +284,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 - 你只有一个主题、一个概要、一个方向，想让 Agent 从头调研、从头组织、从头写出付费级内容
 
-它的核心价值有 6 点：
+我现在主要把它收敛成 6 个核心点：
 
 ### 1. 先判断，再动手写
 
@@ -298,7 +298,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 2. 先调研，再写作
 
-特别是在“从 0 撰写模式”下，这套 SOP 会要求 Agent 优先查：
+特别是在“从 0 撰写模式”下，我会要求 Agent 优先查：
 
 - 官方文档
 - 官方 GitHub 仓库
@@ -307,11 +307,11 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 如果当前环境可用，还会优先使用 `firecrawl` 或同类网页搜索工具完成调研。
 
-这能显著降低“凭印象写”“写得很顺但事实不准”的风险。
+这样能明显降低“凭印象写”“看起来很顺但事实不准”的风险。
 
 ### 3. 先结构化整理，再进入正文
 
-这套 SOP 不允许直接闷头写稿。
+这套 SOP 不走“直接闷头写稿”的路子。
 
 在正式写作前，通常会先产出：
 
@@ -320,11 +320,11 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 - 文章结构
 - 调研稿（从 0 撰写模式）
 
-这样后续正文不是“临场发挥”，而是有组织的成稿。
+这样后续正文不是“临场发挥”，而是在前面整理过之后再落成稿。
 
 ### 4. 不是普通改写，而是付费级升级
 
-它要求正文必须补这些付费层内容：
+我要求正文必须补这些付费层内容：
 
 - 核验日期
 - 误区纠偏
@@ -355,7 +355,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 6. 这不是一篇提示词，而是一整套可复用系统
 
-当前目录已经把整套能力拆成了不同文档，各自负责不同阶段：
+当前目录里，我已经把整套能力拆成了不同文档，各自负责不同阶段：
 
 - 总控入口：负责分流和调度
 - SOP：负责流程和标准
@@ -363,7 +363,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 - 从 0 调研模板：负责正式写作前的研究整理
 - 快速使用指南：负责新目录和新窗口里的调用方式
 
-所以你不是在用“一条命令”，而是在用一套完整生产系统。
+所以这里不是一条孤立提示词，而是一套我自己在持续打磨的生产流程。
 
 ---
 
@@ -371,7 +371,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 如果你不想逐份读文档，可以直接用下面这些 Prompt。
 
-这些 Prompt 已经覆盖当前整套 SOP 的主要能力。
+这些 Prompt 基本覆盖了当前整套 SOP 的主要能力。
 
 ### 1. 改写已有原稿：标准完整版
 
@@ -517,11 +517,11 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ## 三、当前完整 SOP 的功能特性
 
-下面是这套体系目前已经具备的完整功能。
+下面是这套体系目前已经具备的主要功能。
 
 ### 1. 双模式分流
 
-能自动区分：
+可以先区分：
 
 - `改写已有原稿`
 - `从0撰写新稿`
@@ -530,7 +530,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 2. 三类文章类型识别
 
-能识别并切换到对应正文骨架：
+可以识别并切换到对应正文骨架：
 
 - 推荐型
 - 教程型
@@ -538,7 +538,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 3. 付费级任务卡系统
 
-无论是改写还是从 0 写，都要求先输出任务卡，明确：
+无论是改写还是从 0 写，我都要求先输出任务卡，明确：
 
 - 主题
 - 目标读者
@@ -549,7 +549,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 4. 官方优先的资料调研体系
 
-优先级已经固定：
+这里的优先级我已经固定下来：
 
 1. 官方文档
 2. 官方仓库 / 作者资料
@@ -558,7 +558,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 5. 从 0 撰写专用调研流程
 
-从 0 撰写模式下，已经额外具备：
+从 0 撰写模式下，目前已经额外具备：
 
 - 标准调研输出模板
 - 资料来源清单模板
@@ -579,7 +579,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 7. 中文顶级 AI 教程风格参考体系
 
-当前默认参考逻辑已经固化：
+当前默认参考逻辑已经固定：
 
 - 结构推进：偏歸藏
 - 解释拆解：偏宝玉
@@ -588,13 +588,13 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 8. 成稿模板体系
 
-已经有 3 套正式骨架：
+现在已经有 3 套正式骨架：
 
 - 推荐型
 - 教程型
 - 方法论型
 
-不是临时发挥，而是有固定成稿结构。
+不是临时发挥，而是按固定成稿结构来。
 
 ### 9. 付费层内容强制补齐
 
@@ -622,14 +622,14 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 ### 11. 新目录 / 新窗口复用机制
 
-这套体系已经考虑了复用场景。
+这套体系一开始就考虑了复用场景。
 
-也就是说，你以后换项目、换目录、换对话窗口时，不需要重新发明流程，只需要：
+也就是说，以后换项目、换目录、换对话窗口时，不需要重新发明流程，只需要：
 
 - 把这些文档复制到新目录
 - 用标准 Prompt 启动
 
-就能复用整套能力。
+就能把这套能力继续复用下去。
 
 ---
 
@@ -655,7 +655,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 这是从 0 撰写模式下的调研阶段模板。  
 负责在写正文前先把资料、结论、结构整理清楚。
 
-### 5. `新目录或新对话如何快速使用SOP与模板.md`
+### 5. `handoff-prompt.md`
 
 这是复用说明书。  
 负责告诉你在新目录、新窗口里怎么最快启动整套 SOP。
@@ -681,7 +681,7 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 - 单条社媒内容
 - 简单段落润色
 
-就没必要调用整套系统。
+就没必要把整套系统搬出来。
 
 ---
 
@@ -691,4 +691,4 @@ bash ./install.sh --target all|codex|claude|cursor --scope user|project
 
 **以后无论是改写旧稿，还是从 0 写新稿，都先让 Agent 按《付费AI教程改写总控入口.md》执行。**
 
-这会比你每次自己临时解释需求，稳定得多，也更接近你真正想要的“付费级成稿质量”。
+这会比每次临时解释需求稳定得多，也更接近我设计这套 SOP 时想达到的“付费级成稿质量”。
