@@ -49,6 +49,23 @@ description: 用于付费 AI 教程改写、从 0 撰写新稿、工具推荐、
 路由规则见：
 
 - [article-types](references/article-types.md)
+- [article-templates](assets/article-templates.md)
+- [title-and-intro-patterns](assets/title-and-intro-patterns.md)
+
+如果满足下面两个条件：
+
+1. 模式 B：从 0 撰写新稿
+2. 文章类型：教程型
+
+则额外加载：
+
+- [tutorial-audience-and-visuals](references/tutorial-audience-and-visuals.md)
+
+并在正式调研前确认教程受众层级：
+
+- `1` 完全零基础
+- `2` 用过一点但仍属小白
+- `3` 已入门，想进阶到资深
 
 ### 3. 根据模式选择引用文件
 
@@ -56,6 +73,10 @@ description: 用于付费 AI 教程改写、从 0 撰写新稿、工具推荐、
 
 - [rewrite-mode](references/rewrite-mode.md)
 - [style-strategy](references/style-strategy.md)
+- [review-checklist](references/review-checklist.md)
+- [article-templates](assets/article-templates.md)
+- [style-extraction-template](assets/style-extraction-template.md)
+- [title-and-intro-patterns](assets/title-and-intro-patterns.md)
 - [prompts-rewrite](assets/prompts-rewrite.md)
 
 如果是模式 B，先严格执行确认环节：
@@ -74,7 +95,18 @@ description: 用于付费 AI 教程改写、从 0 撰写新稿、工具推荐、
 - [from-zero-mode](references/from-zero-mode.md)
 - [research-template](references/research-template.md)
 - [style-strategy](references/style-strategy.md)
+- [review-checklist](references/review-checklist.md)
+- [article-templates](assets/article-templates.md)
+- [style-extraction-template](assets/style-extraction-template.md)
+- [title-and-intro-patterns](assets/title-and-intro-patterns.md)
 - [prompts-from-zero](assets/prompts-from-zero.md)
+
+如果文章类型属于“教程型”，还要继续遵守：
+
+- 受众层级不明确时，必须先确认 `1 / 2 / 3`
+- 正文深度、术语解释密度、案例组织方式，必须随受众层级调整
+- 合适位置优先加入 Mermaid 流程图、目录树、表格、伪输出示意
+- 高质量第三方资料要同时覆盖英文资料与高质量中文资料
 
 ### 4. 如果用户要求“只先出结构”
 
@@ -86,6 +118,7 @@ description: 用于付费 AI 教程改写、从 0 撰写新稿、工具推荐、
 结构优先场景使用：
 
 - [prompts-structure-only](assets/prompts-structure-only.md)
+- [style-extraction-template](assets/style-extraction-template.md)
 
 这类任务在结构阶段停止，不进入全文。
 
@@ -98,8 +131,9 @@ description: 用于付费 AI 教程改写、从 0 撰写新稿、工具推荐、
 3. 任务卡
 4. 资料优先级 / 调研计划
 5. 风格策略
-6. 新结构
-7. 正文
+6. 风格提取表
+7. 新结构
+8. 正文
 
 ## 硬约束
 
@@ -114,6 +148,8 @@ description: 用于付费 AI 教程改写、从 0 撰写新稿、工具推荐、
 - 必须先调研，再写作
 - 官方一手资料优先
 - 未确认默认调研模板前，不得进入正式调研
+- 如果文章类型属于教程型，且受众层级不明确，必须先确认受众层级
+- 教程型正文要按受众层级决定是否先给完整案例、再拆术语、再带做第二个案例
 
 ### 所有成稿
 
@@ -125,9 +161,15 @@ description: 用于付费 AI 教程改写、从 0 撰写新稿、工具推荐、
 4. 适用边界
 5. 资料来源清单
 
+交付前优先按下面文件复核：
+
+- [review-checklist](references/review-checklist.md)
+
 ## 输出标准
 
 - 不要只把资料堆起来
 - 不要把文章写成“AI 整理稿”
 - 要主动补事实核验、选择标准、边界判断、适合谁与不适合谁
+- 要根据文章类型显式套用对应正文骨架，而不是临场泛化发挥
 - 优先让读者获得“可执行结果”或“更清晰的判断框架”
+- 参考风格时，优先先产出风格提取表，而不是只口头说“参考某位作者”
